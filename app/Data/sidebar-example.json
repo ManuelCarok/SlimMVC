@@ -1,0 +1,99 @@
+[
+    {
+        "title": "NAVIGATION",
+        "orden": 1,
+        "items": [
+            {
+                "name" : "Dashboards",
+                "design" : "badge",
+                "badge-color": "badge-success",
+                "badge-text": "4",
+                "type" : "sub",
+                "icon" : "fe-airplay",
+                "href" : "#",
+                "children": [
+                    {
+                        "name" : "Dashboard 1",
+                        "href" : "dashboard"
+                    },
+                    {
+                        "name" : "Dashboard 2",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Dashboard 3",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Dashboard 4",
+                        "href" : "#"
+                    }
+                ]
+            },
+            {
+                "name" : "Apps",
+                "design" : "arrow",
+                "badge-color": "",
+                "badge-text": "",
+                "type" : "sub",
+                "icon" : "fe-pocket",
+                "href" : "#",
+                "children": [
+                    {
+                        "name" : "Starter",
+                        "href" : "starter"
+                    },
+                    {
+                        "name" : "Kanban Board",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Calendar",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Contacts",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Projects",
+                        "href" : "#"
+                    }
+                ]
+            }
+        ] 
+    },
+    {
+        "title": "Components",
+        "orden": 2,
+        "items": [
+            {
+                "name" : "UI Elements",
+                "design" : "arrow",
+                "badge-color": "",
+                "badge-text": "",
+                "type" : "sub",
+                "icon" : "fe-briefcase",
+                "href" : "#",
+                "children": [
+                    {
+                        "name" : "Buttons",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Cards",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Portlets",
+                        "href" : "#"
+                    },
+                    {
+                        "name" : "Modals",
+                        "href" : "#"
+                    }
+                ]
+            }
+        ] 
+    }
+]

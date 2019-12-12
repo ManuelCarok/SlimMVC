@@ -1,0 +1,50 @@
+<div class="left-side-menu">
+
+    <div class="slimscroll-menu">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+            <ul class="metismenu" id="side-menu">
+                {% for group in sidebar %}
+                    {% if group.orden == 1 %}
+                        <li class="menu-title">{{ group.title }}</li>
+                    {% else %}
+                        <li class="menu-title mt-2">{{ group.title }}</li>
+                    {% endif %}
+
+                    {% for menu in group.items %}
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="{{ menu.icon }}"></i>
+                                {% if menu.design == 'badge' %}
+                                    <span class="badge {{ menu['badge-color'] }} badge-pill float-right">{{ menu['badge-text'] }}</span>
+                                {% endif %}
+                                <span> {{ menu.name }} </span>
+                                {% if menu.design == 'arrow' %}
+                                    <span class="menu-arrow"></span>
+                                {% endif %}
+                            </a>
+
+                            <ul class="nav-second-level" aria-expanded="false">
+                                {% for item in menu.children %}
+                                    <li>
+                                        <a href="{{ item.href }}">{{ item.name }}</a>
+                                    </li>
+                                {% endfor %} 
+                            </ul>
+                         </li>
+                    {% endfor %}        
+                {% endfor %}
+                
+            </ul>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>

@@ -1,0 +1,220 @@
+<div class="navbar-custom">
+    <ul class="list-unstyled topnav-menu float-right mb-0">
+
+        {# <!-- Search Start -->
+        <li class="d-none d-sm-block">
+            <form class="app-search">
+                <div class="app-search-box">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn" type="submit">
+                                <i class="fe-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </li>
+        <!-- Search End --> #}
+
+        <!-- Notification Start -->
+        <li class="dropdown notification-list">
+            <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                <i class="fe-bell noti-icon"></i>
+                <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                <!-- item-->
+                <div class="dropdown-item noti-title">
+                    <h5 class="m-0">
+                        <span class="float-right">
+                            <a href="" class="text-dark">
+                                <small>Limpiar</small>
+                            </a>
+                        </span>Notificación
+                    </h5>
+                </div>
+
+                <div class="slimscroll noti-scroll">
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                        <div class="notify-icon">
+                            <img src="assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt=""> </div>
+                        <p class="notify-details">Cristina Pride</p>
+                        <p class="text-muted mb-0 user-msg">
+                            <small>¿Hola! Cómo estás? ¿Qué hay de nuestra próxima reunión?</small>
+                        </p>
+                    </a>
+                    
+                </div>
+
+                <!-- All-->
+                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                    Ver todos
+                    <i class="fi-arrow-right"></i>
+                </a>
+
+            </div>
+        </li>
+        <!-- Notification Start -->
+
+        <!-- User Control Start -->
+        <li class="dropdown notification-list">
+            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
+                role="button" aria-haspopup="false" aria-expanded="false">
+                <img src="assets\images\users\user-default.jpg" alt="user-image" class="rounded-circle">
+                <span class="pro-user-name ml-1">
+                    Nombre Usuario <i class="mdi mdi-chevron-down"></i>
+                </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                <!-- item-->
+                <div class="dropdown-header noti-title">
+                    <h6 class="text-overflow m-0">Bienvenido!</h6>
+                </div>
+
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <i class="fe-user"></i>
+                    <span>Mi Cuenta</span>
+                </a>
+
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <i class="fe-settings"></i>
+                    <span>Ajustes</span>
+                </a>
+
+                <!-- item-->
+                <a href="lock" class="dropdown-item notify-item">
+                    <i class="fe-lock"></i>
+                    <span>Bloquear</span>
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <!-- item-->
+                <a href="logout" class="dropdown-item notify-item">
+                    <i class="fe-log-out"></i>
+                    <span>Salir</span>
+                </a>
+
+            </div>
+        </li>
+        <!-- User Control Start -->
+
+        <!-- Configuration Start -->
+        <li class="dropdown notification-list">
+            <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+                <i class="fe-settings noti-icon"></i>
+            </a>
+        </li>
+        <!-- Configuration Start -->
+
+    </ul>
+
+    <!-- LOGO -->
+    <div class="logo-box">
+        <a href="index.html" class="logo text-center">
+            <span class="logo-lg">
+                <img src="assets\images\logo-light.png" alt="" height="30">
+                <!-- <span class="logo-lg-text-light">UBold</span> -->
+            </span>
+            <span class="logo-sm">
+                <!-- <span class="logo-sm-text-dark">U</span> -->
+                <img src="assets\images\logo-sm.png" alt="" height="47">
+            </span>
+        </a>
+    </div>
+
+    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+        <li>
+            <button class="button-menu-mobile waves-effect waves-light">
+                <i class="fe-menu"></i>
+            </button>
+        </li>
+
+        {# <li class="dropdown d-none d-lg-block">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                Menu Básico
+                <i class="mdi mdi-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <i class="fe-briefcase mr-1"></i>
+                    <span>Nuevo proyecto</span>
+                </a>
+
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <i class="fe-user mr-1"></i>
+                    <span>Crear usuario</span>
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <!-- item-->
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <i class="fe-headphones mr-1"></i>
+                    <span>Soporte & Ayuda</span>
+                </a>
+
+            </div>
+        </li>
+
+        <li class="dropdown dropdown-mega d-none d-lg-block">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                Menu Avanzado
+                <i class="mdi mdi-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu dropdown-megamenu">
+                <div class="row">
+                    <div class="col-sm-8">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5 class="text-dark mt-0">UI Components</h5>
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="javascript:void(0);">Widgets</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Nestable List</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h5 class="text-dark mt-0">Applications</h5>
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="javascript:void(0);">eCommerce Pages</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">CRM Pages</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-center mt-3">
+                            <h3 class="text-dark">Venta de descuento especial!</h3>
+                            <h4>Ahorre hasta un 70% de descuento.</h4>
+                            <button class="btn btn-primary btn-rounded mt-3">Descargar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </li> #}
+    </ul>
+</div>
