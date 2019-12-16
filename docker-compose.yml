@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  slimmvc:
+    image: slimmvc
+    build: .
+    ports:
+      - 80:80
