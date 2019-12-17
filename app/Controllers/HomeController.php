@@ -6,7 +6,7 @@ use Models\Test;
 class HomeController extends Controller {
 
     public function index($request, $response) {
-        return $response->withRedirect($this->router->pathFor("Dashboard"));
+        return $response->withRedirect($this->router->pathFor("Login"));
     }
 
     public function dashboard($request, $response) {

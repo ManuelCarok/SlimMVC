@@ -7,7 +7,7 @@ $app->get('/starter', 'HomeController:starter');
 $app->get('/test', 'HomeController:testing');
 
 //Auth
-$app->get('/login', 'AuthController:login');
+$app->get('/login', 'AuthController:login')->setName('Login');
 $app->get('/recoverypw', 'AuthController:recoverypw');
 $app->get('/register', 'AuthController:register');
 $app->get('/lock', 'AuthController:lock');

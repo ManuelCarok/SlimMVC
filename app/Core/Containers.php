@@ -2,6 +2,10 @@
 
 // Twig
 $container['view'] = function($container) {
+    // $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
+    //     'cache' => false
+    // ]);
+
     $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
         'cache' => false
     ]);

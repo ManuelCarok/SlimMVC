@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-require dirname(__DIR__).'../../vendor/autoload.php';
-require dirname(__DIR__).'/autoload.php';
-require_once dirname(__DIR__).'/Core/Config.php';
+require_once dirname(__DIR__).'/autoload.php';
 
 $app = new \Slim\App([
     'settings' => [
@@ -13,6 +11,5 @@ $app = new \Slim\App([
 ]);
 
 $container = $app->getContainer();
-require dirname(__DIR__).'/Core/Containers.php';
-
-require dirname(__DIR__).'/Core/Routes.php';
+require_once dirname(__DIR__).'/Core/Containers.php';
+require_once dirname(__DIR__).'/Core/Routes.php';

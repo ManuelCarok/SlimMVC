@@ -1,4 +1,4 @@
 <?php
 
-require dirname(__DIR__).'/app/core/main.php';
+require dirname(__DIR__).'/app/Core/Main.php';
 $app->run();
