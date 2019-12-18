@@ -2,7 +2,7 @@ Documentación
 ===================
 
 Esta es una arquitectura MVC basada en Slim Framework v3.0.
-[documentación de slim] (http://www.slimframework.com/docs/v3/).
+   [documentación de slim] (http://www.slimframework.com/docs/v3/).
 
 Las ventajas de esta arquitectura:
 
