@@ -1,7 +1,7 @@
 Documentación
 ===================
 
-Esta es una arquitectura MVC basada en Slim Framework v3.0. [documentación] (http://www.slimframework.com/docs/v3/)
+Esta es una arquitectura MVC basada en Slim Framework v3.0. [documentación](http://www.slimframework.com/docs/v3/)
 
 Las ventajas de esta arquitectura:
 
@@ -151,7 +151,7 @@ Vistas
 -----------
 
 Solo debes crear un archivo en la carpeta View puede ser extension html o twig.
-pueden usar la documentación de [twig] (https://twig.symfony.com/). 
+pueden usar la documentación de [twig](https://twig.symfony.com/). 
 
 Ejemplo:
 
