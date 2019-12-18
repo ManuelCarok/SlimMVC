@@ -155,7 +155,7 @@ pueden usar la documentación de [twig] (https://twig.symfony.com/).
 
 Ejemplo:
 
-```php
+```html
 // Se asocia a un layout
 {% extends "Shared/Layout.twig" %}
 
