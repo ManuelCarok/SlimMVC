@@ -24,9 +24,15 @@ class HomeController extends Controller {
     }
 
     public function testing($request, $response) {
-        $model = new Usuario($this);
-        print_r($model->ListUsuarios());
 
+        // MODELO
+        // $model = new Usuario($this);
+        // print_r($model->ListUsuarios());
+
+        // SETTINGS
         // print_r($this->container['settings']['db']);
+
+        // JWT
+        echo $this->jwt->sign([],"key", 60);
     }
 }

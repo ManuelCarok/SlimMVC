@@ -41,6 +41,11 @@ $container['db'] = function($container) {
     return new Lib\MySQLDB($container['settings']['db']);
 };
 
+// JWT
+$container['jwt'] = function($container) {
+    return new Lib\JWTSecurity();
+};
+
 // Controllers
 $container['HomeController'] = function($container) {
     return new \Controllers\HomeController($container);
