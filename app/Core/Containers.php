@@ -1,17 +1,4 @@
 <?php
-// App
-$app = new \Slim\App([
-    'settings' => [
-        'displayErrorDetails' => true,
-        'determineRouteBeforeAppMiddleware' => true,
-        'db' => [
-            'host' => 'localhost',
-            'user' => '',
-            'password' => '',
-            'database' => 'ecommerce'
-        ]
-    ]
-]);
 
 $container = $app->getContainer();
 
