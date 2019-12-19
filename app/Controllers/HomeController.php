@@ -1,7 +1,7 @@
 <?php
 
 namespace Controllers;
-use Models\Test;
+use Models\Usuario;
 
 class HomeController extends Controller {
 
@@ -24,6 +24,9 @@ class HomeController extends Controller {
     }
 
     public function testing($request, $response) {
-        
+        $model = new Usuario($this);
+        print_r($model->ListUsuarios());
+
+        // print_r($this->container['settings']['db']);
     }
 }

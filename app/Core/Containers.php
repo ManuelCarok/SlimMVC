@@ -1,11 +1,22 @@
 <?php
+// App
+$app = new \Slim\App([
+    'settings' => [
+        'displayErrorDetails' => true,
+        'determineRouteBeforeAppMiddleware' => true,
+        'db' => [
+            'host' => 'localhost',
+            'user' => '',
+            'password' => '',
+            'database' => 'ecommerce'
+        ]
+    ]
+]);
+
+$container = $app->getContainer();
 
 // Twig
 $container['view'] = function($container) {
-    // $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
-    //     'cache' => false
-    // ]);
-
     $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
         'cache' => false
     ]);
@@ -16,6 +27,11 @@ $container['view'] = function($container) {
     ));
 
     return $view;
+};
+
+// MySQL
+$container['db'] = function($container) {
+    return new Lib\MySQLDB($container['settings']['db']);
 };
 
 // Controllers

@@ -11,8 +11,12 @@ class MySQLDB extends Mysqli {
     private $errorThis = false;
     private $errThis = '';
 
-    public function __construct($host, $user, $password, $database) {
-        parent::__construct($host, $user, $password, $database);
+    // public function __construct($host, $user, $password, $database) {
+    //     parent::__construct($host, $user, $password, $database);
+    // }
+
+    public function __construct($settings) {
+        parent::__construct($settings['host'], $settings['user'], $settings['password'], $settings['database']);
     }
 
     public function call(string $query, $values = null, string $types = '') {
@@ -51,7 +55,7 @@ class MySQLDB extends Mysqli {
         try {
             if ($this->connect_errno) {
                 $this->errorThis = true;
-                $this->errThis = "Fallo al conectar a MySQL: (" . $this->connect_errno . ") " . $this->connect_error;
+                $this->errThis = "Fallo al conectar a MySQL: (" . $this->connect_errno . ") " . utf8_encode($this->connect_error);
             } else {
                 $this->set_charset('utf8');
                 if ($stmt = $this->prepare($query)) {
@@ -100,6 +104,8 @@ class MySQLDB extends Mysqli {
     }
 
     public function closeConnection() {
-        $this->close();
+        if (!$this->connect_errno) {
+            $this->close();
+        }
     }
 }
