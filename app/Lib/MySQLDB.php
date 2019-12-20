@@ -19,7 +19,7 @@ class MySQLDB extends Mysqli {
         parent::__construct($settings['host'], $settings['user'], $settings['password'], $settings['database']);
     }
 
-    public function call(string $query, $values = null, string $types = '') {
+    public function call(string $query, array $values = null, string $types = '') {
 		try {
             if ($this->connect_errno) {
                 $this->errorThis = true;
@@ -51,7 +51,7 @@ class MySQLDB extends Mysqli {
         }
     }
 
-    public function exec(string $query, $values = null, string $types = '') {
+    public function exec(string $query, array $values = null, string $types = '') {
         try {
             if ($this->connect_errno) {
                 $this->errorThis = true;

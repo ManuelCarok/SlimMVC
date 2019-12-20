@@ -33,6 +33,17 @@ class HomeController extends Controller {
         // print_r($this->container['settings']['db']);
 
         // JWT
-        echo $this->jwt->sign([],"key", 60);
+        //echo $this->jwt->sign([],"key", 60);
+
+        //MAIL
+        // echo $template = $this->view->fetch('/Error/404.twig');
+        // $html = $template->render();
+        // echo $html;
+        $mail = $this->mail->sendMail('Asunto', 'Body', array(array('name' => 'Manuel Caroca','mail' => 'manuelcarok@gmail.com'),array('name' => 'Manuel Byte','mail' => 'manuel@byteservices.cl')));
+        if($mail) {
+            echo 'Enviado';
+        } else {
+            echo 'Error';
+        }
     }
 }

@@ -12,6 +12,16 @@ $app = new \Slim\App([
             'user' => '',
             'password' => '',
             'database' => 'ecommerce'
+        ],
+        'mail' => [
+            'host' => 'mail.example.com',
+            'user' => 'manuel@example.com',
+            'password' => '',
+            'port' => 587,
+            'name' => 'SlimFrameworkMail'
+        ],
+        'slack' => [
+            'token' => ''
         ]
     ]
 ]);

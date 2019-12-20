@@ -3,9 +3,11 @@
 namespace Lib;
 
 class Slack {
-	private $token = '';
+	private $token;
 	
-	public function __construct() {}
+	public function __construct(array $settings) {
+		$this->token = $settings['token'];
+	}
 	
 	public function sendMessage($channel, $message) {
 		$ch = curl_init("https://slack.com/api/chat.postMessage");

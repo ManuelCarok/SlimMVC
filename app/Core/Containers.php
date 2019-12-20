@@ -27,21 +27,23 @@ $container['view'] = function($container) {
     $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
         'cache' => false
     ]);
-
     $view->addExtension(new \Slim\Views\TwigExtension(
         $container->router,
         $container->request->getUri()
     ));
-
     return $view;
 };
 
-// MySQL
+// Librerias
 $container['db'] = function($container) {
     return new Lib\MySQLDB($container['settings']['db']);
 };
-
-// JWT
+$container['mail'] = function($container) {
+    return new Lib\Mail($container['settings']['mail']);
+};
+$container['slack'] = function($container) {
+    return new Lib\Slack($container['settings']['slack']);
+};
 $container['jwt'] = function($container) {
     return new Lib\JWTSecurity();
 };
@@ -50,7 +52,6 @@ $container['jwt'] = function($container) {
 $container['HomeController'] = function($container) {
     return new \Controllers\HomeController($container);
 };
-
 $container['AuthController'] = function($container) {
     return new \Controllers\AuthController($container);
 };
