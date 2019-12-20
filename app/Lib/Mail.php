@@ -8,61 +8,117 @@ use PHPMailer\PHPMailer\Exception;
 
 class Mail {
 
-    private $host;
+    private $mail;
     private $user;
-    private $password;
-    private $port;
     private $name;
+    private $body;
 
     public function __construct(array $settings) {
-        $this->host = $settings['host'];
         $this->user = $settings['user'];
-        $this->password = $settings['password'];
-        $this->port = $settings['port'];
         $this->name = $settings['name'];
+
+        $this->mail = new PHPMailer(true);
+        //Server settings
+        $this->mail->SMTPDebug = SMTP::DEBUG_OFF;                                       
+        $this->mail->isSMTP();                                           
+        $this->mail->Host       = $settings['host'];                   
+        $this->mail->SMTPAuth   = true;                                  
+        $this->mail->Username   = $this->user;                    
+        $this->mail->Password   = $settings['password'];                             
+        $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
+        $this->mail->Port       = $settings['port'];
     }
 
-    public function sendMail(string $asunto, string $body, array $correos = null, array $archivos = null) {
-        $mail = new PHPMailer(true);
+    public function setAddress(string $correo, string $nombre)
+    {
+        $this->mail->addAddress($correo,$nombre);
+    }
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_OFF;                                       // Enable verbose debug output
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = $this->host;                    // Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = $this->user;                     // SMTP username
-            $mail->Password   = $this->password;                               // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-            $mail->Port       = $this->port;                                    // TCP port to connect to
-
-            //Recipients
-            $mail->setFrom($this->user, $this->name);
-            if($correos != null) {
-                foreach($correos as $key => $correo) {
-                    $mail->addAddress($correo['mail'],$correo['name']);  
-                }
+    public function setAddressArray(array $correos)
+    {
+        if($correos != null) {
+            foreach($correos as $key => $correo) {
+                $this->mail->addAddress($correo['mail'],$correo['name']);  
             }
-            //$mail->addReplyTo('info@example.com', 'Information');
-            //$mail->addCC('cc@example.com');
-            //$mail->addBCC('bcc@example.com');
+        }
+    }
 
-            // Attachments
-            //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-            //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    public function setReplyTo(string $correo, string $nombre)
+    {
+        $this->mail->addReplyTo($correo,$nombre);
+    }
+
+    public function setReplyToArray(array $correos)
+    {
+        if($correos != null) {
+            foreach($correos as $key => $correo) {
+                $this->mail->addReplyTo($correo['mail'],$correo['name']);  
+            }
+        }
+    }
+
+    public function setCC(string $correo)
+    {
+        $this->mail->addCC($correo);
+    }
+
+    public function setCCArray(array $correos)
+    {
+        if($correos != null) {
+            foreach($correos as $correo) {
+                $this->mail->addCC($correo);  
+            }
+        }
+    }
+
+    public function setBCC(string $correo)
+    {
+        $this->mail->addBCC($correo);
+    }
+
+    public function setBCCArray(array $correos)
+    {
+        if($correos != null) {
+            foreach($correos as $correo) {
+                $this->mail->addBCC($correo);  
+            }
+        }
+    }
+
+    public function setAttachments()
+    {
+        // Attachments
+        $this->mail->addAttachment('/var/tmp/file.tar.gz');         
+        $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');  
+    }
+
+    public function setAttachmentsArray()
+    {
+        // Attachments
+        $this->mail->addAttachment('/var/tmp/file.tar.gz');         
+        $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');  
+    }
+
+    public function setBody(string $body)
+    {
+        $this->body = $body;
+    }
+
+    public function sendMail(string $asunto) {
+        try {
+            //Recipients
+            $this->mail->setFrom($this->user, $this->name);  
 
             // Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = $asunto;
-            $mail->Body    = $body;
+            $this->mail->isHTML(true);                                 
+            $this->mail->Subject = $asunto;
+            $this->mail->Body   = $this->body;
 
-            if($correos != null) {
-                $mail->send();
-            }
+            $this->mail->send();
             
             return true;
         } catch (Exception $e) {
-            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            //echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
             return false;
         }
     }

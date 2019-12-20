@@ -25,12 +25,15 @@ $container['notAllowedHandler'] = function ($container) {
 // Twig
 $container['view'] = function($container) {
     $view = new \Slim\Views\Twig(dirname(__DIR__).'/Views', [
-        'cache' => false
+        'cache' => false,
+        'autoescape' => 'html'
     ]);
+
     $view->addExtension(new \Slim\Views\TwigExtension(
         $container->router,
         $container->request->getUri()
     ));
+
     return $view;
 };
 

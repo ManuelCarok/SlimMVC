@@ -36,14 +36,18 @@ class HomeController extends Controller {
         //echo $this->jwt->sign([],"key", 60);
 
         //MAIL
-        // echo $template = $this->view->fetch('/Error/404.twig');
-        // $html = $template->render();
-        // echo $html;
-        $mail = $this->mail->sendMail('Asunto', 'Body', array(array('name' => 'Manuel Caroca','mail' => 'manuelcarok@gmail.com'),array('name' => 'Manuel Byte','mail' => 'manuel@byteservices.cl')));
-        if($mail) {
-            echo 'Enviado';
-        } else {
-            echo 'Error';
-        }
+        // $html = array(
+        //     'title' => 'Hola',
+        //     'parametro' => 'Prueba <strong> con template</strong> render.'
+        // );
+        // $template = $this->view->fetch('/Mail/Alert.twig', compact('html'));
+        // $this->mail->setAddress('manuelcarok@gmail.com', 'Manuel Caroca');
+        // $this->mail->setBody($template);
+        // $mail = $this->mail->sendMail('Prueba');
+        // if($mail) {
+        //     echo 'Enviado';
+        // } else {
+        //     echo 'Error';
+        // }
     }
 }
