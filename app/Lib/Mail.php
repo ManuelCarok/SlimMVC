@@ -57,7 +57,7 @@ class Mail {
             $mail->Body    = $body;
 
             if($correos != null) {
-                //$mail->send();
+                $mail->send();
             }
             
             return true;
